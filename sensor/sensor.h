@@ -8,7 +8,6 @@
 
 
 #define _NOP() do { __asm__ __volatile__ ("nop"); } while (0)
-#define F_CPU 16000000
 #define BitSet(Port,Bit) (Port|=(1<<Bit))
 #define BitClear(Port,Bit) (Port&=~(1<<Bit))
 #include <util/delay.h>
@@ -17,6 +16,8 @@
 #ifndef SENSOR_H_
 #define SENSOR_H_
 
-void init_sensor();
+void reset();
+uint8_t read_data(uint8_t *temperature,uint8_t *humidity);
+
 
 #endif /* SENSOR_H_ */

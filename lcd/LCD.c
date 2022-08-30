@@ -5,28 +5,19 @@
  *  Author: patryk
  */ 
 #include "LCD.h";
-#define four_bit_mode 0x02
-#define double_line_lcd_mode 0x28
-#define blinking_cursor 0x0F
-#define auto_increment_cursor 0x06
-#define clear_display 0x01
-#define cursor_to_home_position 0x80
+
 
 void init_lcd(){
 	_delay_ms(20);
-	enable_command_mode();
 	command(four_bit_mode);	/* 4bit mode */
 	command(double_line_lcd_mode);	/* Initialization of 16X2 LCD in 4bit mode */
 	command(blinking_cursor);	/* Display ON Cursor OFF */
 	command(auto_increment_cursor);	/* Auto Increment cursor */
 	command(clear_display);	/* clear display */
 	command(cursor_to_home_position);	/* cursor at home position */
-	enable_write_mode();
 	write("Hello! :)");
 	_delay_ms(1000);
-	enable_command_mode();
 	command(clear_display);
-	enable_write_mode();
 }
 
 void enable(){
@@ -37,15 +28,14 @@ void enable(){
 
 void enable_write_mode(){
 	BitSet(PORTC,PORTC4);
-	_delay_ms(5);
 }
 
 void enable_command_mode(){
 	BitClear(PORTC,PORTC4);
-	_delay_ms(5);
 }
 
 void command(unsigned char cmd){
+	enable_command_mode();
 	uint8_t ldata = cmd;
 	PORTD = ldata;
 	enable();
@@ -57,6 +47,7 @@ void command(unsigned char cmd){
 }
 
 void letter(unsigned char letter){
+	enable_write_mode();
 	uint8_t ldata = letter;   /*Send higher nibble of command first to PORTC*/
 	PORTD = ldata;
 	enable();

@@ -1,2 +1,4 @@
 Copy-Item "C:\Users\patry\Documents\Atmel Studio\7.0\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\Debug\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY.hex" -Destination "C:\Users\patry\Desktop\temperature_and_humidity_sensor\main.hex" 
 Copy-Item "C:\Users\patry\Documents\Atmel Studio\7.0\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\main.c" -Destination "C:\Users\patry\Desktop\temperature_and_humidity_sensor\main.c"
+Copy-Item "C:\Users\patry\Documents\Atmel Studio\7.0\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\lcd\*" -Destination "C:\Users\patry\Desktop\temperature_and_humidity_sensor\lcd"
+Copy-Item "C:\Users\patry\Documents\Atmel Studio\7.0\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\ATMEGA88PA_TEMPERATURE_AND_HUMIDITY\sensor\*" -Destination "C:\Users\patry\Desktop\temperature_and_humidity_sensor\sensor"

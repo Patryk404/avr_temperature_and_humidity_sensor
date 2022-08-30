@@ -7,8 +7,6 @@ Sensor: DHT11
 Programmer: ISP
 
 # Pictures
-
-
-
+![](https://raw.githubusercontent.com/Patryk404/avr_temperature_and_humidity_sensor/main/pictures/1.jpg)
 # Scheme
 

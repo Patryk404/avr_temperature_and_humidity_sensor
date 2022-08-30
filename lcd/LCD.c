@@ -36,22 +36,22 @@ void enable_command_mode(){
 
 void command(unsigned char cmd){
 	enable_command_mode();
-	uint8_t ldata = cmd;
+	uint8_t ldata = ((cmd>>4)&0x0F);
 	PORTD = ldata;
 	enable();
 	_delay_ms(5);
-	ldata = ((cmd<<4)&0xF0);
+	ldata = cmd;
 	PORTD = ldata;
 	enable();
 	_delay_ms(5);
 }
 
-void letter(unsigned char letter){
+void send_letter(unsigned char letter){
 	enable_write_mode();
-	uint8_t ldata = letter;   /*Send higher nibble of command first to PORTC*/
+	uint8_t ldata = ((letter>>4)&0x0F);
 	PORTD = ldata;
 	enable();
-	ldata = ((letter<<4)&0xF0);  // send lower
+	ldata = letter;
 	PORTD = ldata;
 	enable();
 }
@@ -59,6 +59,6 @@ void letter(unsigned char letter){
 void write(const char *a){
 	uint8_t i;
 	for(i=0; a[i]!='\0';i++){
-		letter(a[i]);
+		send_letter(a[i]);
 	}
 }

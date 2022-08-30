@@ -31,8 +31,8 @@ char* itoa(int i, char b[]){  // stole it from stackoverflow
 
 void init_pins(){
 	DDRC = 0b00111000;
-	DDRD = 0xF0;
-}
+	DDRD = 0x0F; // why this is not working ?
+ }
 
 
 int main(void)
@@ -52,7 +52,7 @@ int main(void)
 		itoa(humidity,humidity_str);
 		write("temperature: ");
 		write(temperature_str);
-		letter(0b11011111);
+		send_letter(0b11011111);
 		command(jump_second_line);
 		write("humidity: ");
 		write(humidity_str);

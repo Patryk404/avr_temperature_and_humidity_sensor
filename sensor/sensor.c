@@ -85,7 +85,7 @@ uint8_t read_data(uint8_t *temperature,uint8_t *humidity){
 		for(i=0;i<5;i++){
 			buffer[i]= read_byte();
 		}
-		if((buffer[0]+buffer[1]+buffer[2]+buffer[3])==buffer[4]){
+		if((buffer[0]+buffer[1]+buffer[2]+buffer[3])==buffer[4]){ 
 			*humidity = buffer[0];
 			*temperature = buffer[2];
 		}

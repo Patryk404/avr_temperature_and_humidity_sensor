@@ -33,6 +33,6 @@ void command(unsigned char cmd);
 
 void write(const char *a);
 
-void letter(unsigned char letter);
+void send_letter(unsigned char letter);
 
 #endif /* INCFILE1_H_ */

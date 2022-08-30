@@ -9,12 +9,12 @@
 
 void init_lcd(){
 	_delay_ms(20);
-	command(four_bit_mode);	/* 4bit mode */
-	command(double_line_lcd_mode);	/* Initialization of 16X2 LCD in 4bit mode */
-	command(blinking_cursor);	/* Display ON Cursor OFF */
-	command(auto_increment_cursor);	/* Auto Increment cursor */
-	command(clear_display);	/* clear display */
-	command(cursor_to_home_position);	/* cursor at home position */
+	command(four_bit_mode);
+	command(double_line_lcd_mode);
+	command(blinking_cursor);	
+	command(auto_increment_cursor);
+	command(clear_display);
+	command(cursor_to_home_position);	
 	write("Hello! :)");
 	_delay_ms(1000);
 	command(clear_display);

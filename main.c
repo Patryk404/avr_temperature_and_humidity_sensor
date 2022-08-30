@@ -31,7 +31,7 @@ char* itoa(int i, char b[]){  // stole it from stackoverflow
 
 void init_pins(){
 	DDRC = 0b00111000;
-	DDRD = 0x0F; // why this is not working ?
+	DDRD = 0x0F;
  }
 
 
